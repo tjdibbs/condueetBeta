@@ -27,8 +27,8 @@ export default function Banks() {
                         </div>
                         <h1>Choose your bank</h1>
                         <div className="banks-list_wrap">
-                            {banklist.map((bank) => (
-                                <Link to='/' className='banks-list_item' key={bank.id}>
+                            {banklist.map((bank, index) => (
+                                <Link to={`/banks/${index}`} className='banks-list_item' key={bank.id}>
                                     <img src={bank.logo} alt="logo" />
                                     <p>{bank.name}</p>
                                 </Link>

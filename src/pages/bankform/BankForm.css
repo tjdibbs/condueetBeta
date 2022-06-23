@@ -1,0 +1,53 @@
+.bankform{
+    width: 70%;
+}
+.bankform-wrap{
+    height: 700px;
+    /* background: #fff; */
+    padding: 70px 100px;
+}
+.bankform-logo{
+    display: flex;
+    margin-bottom: 3.5rem;
+    justify-content: center;
+}
+.bankform-wrap{
+
+}
+.bankform-wrap label{
+    display: block;
+    margin-bottom: 1.5rem;
+}
+.bankform-form span{
+    margin-bottom: .5rem;
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000;
+}
+.bankform-form input {
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 1.2rem;
+    color: #000;
+    font-family: inherit;
+    background: #fff;
+    border: 1px solid #727579;
+    border-radius: 4px;
+}
+.bankform-form button {
+    border: none;
+    width: 100%;
+    margin: 0 auto;
+    color: #fff;
+    display: block;
+    padding: 1.2rem 0;
+    cursor: pointer;
+    font-weight: 500;
+    margin-top: 50px;
+    font-size: 1rem;
+    font-family: inherit;
+    border-radius: 4px;
+    /* background-color: #0e2254; */
+}
