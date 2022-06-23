@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 //styles
 import './Banks.css'
@@ -16,9 +15,20 @@ import GeneralLayout from '../../components/layout/GeneralLayout';
 import CondueetLogo from '../../components/condueet-logo/CondueetLogo';
 
 export default function Banks() {
-  console.log("banklist>>>", banklist)
   const [id, setId] = useState(null);
   const [modal, setModal] = useState(false);
+
+  //search states
+  const [searchedBanks, setSearchedBank] = useState('');
+
+  //search function
+  const filteredbanks = banklist.filter((bank) => {
+    if(searchedBanks === ''){
+        return bank;
+    }else{
+        return bank.name.toLowerCase().includes(searchedBanks)
+    }
+  })
 
   //open modal
   const openModal = (index) => {
@@ -29,22 +39,26 @@ export default function Banks() {
   //close the modal
   const handleClose = () => {
     setModal(false)
-    console.log('aas')
   }
 
+  console.log("filter>>>", searchedBanks)
   return (
     <GeneralLayout>
         <section className='banks'>
             <div className="banks-wrap">
-                    <CondueetLogo />
+                    <div className="banks-logo"><CondueetLogo /></div>
                     <div className="banks-container">
                         <div className="input_container">
-                            <input type="search" placeholder='Search for your bank' />
+                            <input   
+                              type="search" 
+                              onChange={(e) => setSearchedBank(e.target.value.toLowerCase())} 
+                              placeholder='Search for your bank' 
+                            />
                             <img src={search} alt="search" />
                         </div>
                         <h1>Choose your bank</h1>
                         <div className="banks-list_wrap">
-                            {banklist.map((bank, index) => (
+                            {filteredbanks.map((bank, index) => (
                                 <div onClick={() => openModal(index)} className='banks-list_item' key={bank.id}>
                                     <img src={bank.logo} alt="logo" />
                                     <p>{bank.name}</p>

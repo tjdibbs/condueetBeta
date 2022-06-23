@@ -1,6 +1,10 @@
 .banks{
     width: 70%;
 }
+.banks-logo{
+    display: flex;
+    justify-content: center;
+}
 .banks-wrap{
     height: 700px;
     background: #fff;
@@ -12,6 +16,7 @@
     padding: 20px 60px;
     border-radius: 4px;
     margin: 30px 0;
+    font-size: 1rem;
 }
 .banks-wrap h1{
     color: #0E2254;

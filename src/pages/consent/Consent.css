@@ -1,6 +1,10 @@
 .consent{
     width: 70%;
 }
+.consent-logo{
+    display: flex;
+    justify-content: center;
+}
 .consent-wrap{
     background: #fff;
     display: flex;
