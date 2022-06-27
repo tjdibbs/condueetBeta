@@ -16,33 +16,37 @@ export default function BankForm() {
     <GeneralLayout>
         <section className='bankform'>
             <div 
-                className="bankform-wrap"
-                style={{
-                    backgroundColor: `${banklist[id].pColor}`
-                }}
+              className="bankform-wrap"
+              style={{
+                // backgroundColor: `${banklist[id].pColor}`
+              }}
             >
                 <div className="bankform-logo">
-                    <img src={banklist[id].xlogo} alt="" />
+                    <img src={banklist[id].xlogo} style={{
+                        border: `2px solid ${banklist[id].sColor}`
+                    }} alt="" />
                 </div>
                 <form className='bankform-form'>
                     <label>
-                        <span>Username</span>
+                        {/* <span>Username</span> */}
                         <input
                          type="text" 
+                         placeholder='Username'
                          required
                         />
                     </label>
                     <label>
-                        <span>Password</span>
+                        {/* <span>Password</span> */}
                         <input
                          type="password" 
+                         placeholder='Password'
                          required
                         />
                     </label>
                     <button
-                        style={{
-                            backgroundColor: `${banklist[id].sColor}`
-                        }}
+                      style={{
+                        backgroundColor: `${banklist[id].sColor}`
+                      }}
                     >Login</button>
                 </form>
             </div>

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 //styles
@@ -12,8 +13,11 @@ import protectedImg from '../../assets/protected.svg';
 import GeneralLayout from '../../components/layout/GeneralLayout';
 import CondueetLogo from '../../components/condueet-logo/CondueetLogo';
 
-export default function Consent() {
+export default function Consent({func}) {
   const navigate = useNavigate();
+  const [checked, setChecked] = useState(false);
+
+  func(checked);
 
   const handleSubmit = () => {
     navigate('/banks');
@@ -48,7 +52,7 @@ export default function Consent() {
                   </div>
                   <form onSubmit={handleSubmit}> 
                     <div className="consent-check_item">
-                      <input type="checkbox" required />
+                      <input type="checkbox" value={checked} onChange={() => setChecked(!checked)} required />
                       <p>By clicking on the button below you agree to Condueet T&C.</p>
                     </div>
                   <button className='button'>Select Account</button>

@@ -1,22 +1,30 @@
 .bankform{
-    width: 70%;
+    width: 500px;
 }
 .bankform-wrap{
-    height: 700px;
-    /* background: #fff; */
-    padding: 70px 100px;
+    /* height: 700px; */
+    background: #fff;
+    /* padding: 70px 100px; */
+    padding: 45px;
 }
 .bankform-logo{
     display: flex;
-    margin-bottom: 3.5rem;
+    margin-bottom: 2.5rem;
     justify-content: center;
+    
+}
+.bankform-logo img{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    /* border: 1px solid #727579; */
 }
 .bankform-wrap{
 
 }
 .bankform-wrap label{
     display: block;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 .bankform-form span{
     margin-bottom: .5rem;
@@ -34,7 +42,10 @@
     font-family: inherit;
     background: #fff;
     border: 1px solid #727579;
-    border-radius: 4px;
+    border-radius: 10px;
+}
+.bankform-form label:nth-child(2){
+    margin-bottom: 2.5rem;
 }
 .bankform-form button {
     border: none;
@@ -45,9 +56,19 @@
     padding: 1.2rem 0;
     cursor: pointer;
     font-weight: 500;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     font-size: 1rem;
     font-family: inherit;
-    border-radius: 4px;
+    border-radius: 10px;
     /* background-color: #0e2254; */
+}
+
+@media(max-width: 600px){
+    .bankform{
+        width: 90%;
+    }
+    .bankform-wrap{
+        padding: 1.5rem;
+        padding-bottom: 2rem;
+    }
 }
