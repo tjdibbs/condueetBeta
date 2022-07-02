@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 //styles
 import './Banks.css'
@@ -14,11 +15,25 @@ import BankModal from '../../components/bankmodal/BankModal';
 import GeneralLayout from '../../components/layout/GeneralLayout';
 import CondueetLogo from '../../components/condueet-logo/CondueetLogo';
 
+
 export default function Banks() {
   //stores the index of the objects in the array
   const [id, setId] = useState(null);
+
+  //react dom states
+  const location = useLocation();
+  const navigate = useNavigate();
+
   //controls the display of the modal
   const [modal, setModal] = useState(false);
+
+  console.log("hello>>>",location.state)
+
+  useEffect(() => {
+    if(!location.state) {
+      navigate("/")
+    }
+  }, [location.state, navigate])
 
   //search states(stores the value of the input text)
   const [searchedBanks, setSearchedBank] = useState('');
@@ -74,7 +89,7 @@ export default function Banks() {
             </div>
           </div>
           {/* modal component takes the handleclose function and id(index) of the object in the array as a prop */}
-          { modal && <BankModal handleClose={handleClose} id={id}/> } 
+          { modal && <BankModal loc={location.state} handleClose={handleClose} id={id}/> } 
         </section>
     </GeneralLayout>
    

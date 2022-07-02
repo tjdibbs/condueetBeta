@@ -1,4 +1,5 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation, useNavigate  } from 'react-router-dom';
+
 
 //styles
 import './BankForm.css';
@@ -8,9 +9,20 @@ import { banklist } from '../bank/banklist';
 
 //components
 import GeneralLayout from '../../components/layout/GeneralLayout';
+import { useEffect } from 'react';
 
 export default function BankForm() {
   const { id } = useParams();
+
+    //react dom states
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    useEffect(() => {
+      if(!location.state) {
+        navigate("/")
+      }
+    }, [])
 
   return (
     <GeneralLayout>

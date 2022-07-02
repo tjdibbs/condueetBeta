@@ -10,7 +10,7 @@ import internet from '../../assets/internet.svg';
 //bank list
 import { banklist } from '../../pages/bank/banklist';
 
-export default function BankModal({id, handleClose}) {
+export default function BankModal({id, handleClose, loc}) {
   const banktext = <p className='internet-text_two'>Click here to use the credentials you use with your <span>{banklist[id].name}</span> internet banking</p>
 
   return (
@@ -19,7 +19,7 @@ export default function BankModal({id, handleClose}) {
             <div className="bankmodal-img"><img src={close} alt="" onClick={handleClose} /></div>
             <p className='bankmodal-text'>Choose a login method</p>
             <div className="bankmodal-loginmethod">
-                <Link to={`/banks/${id}`} className="loginmethod-internet">
+                <Link to={`/banks/${id}`} className="loginmethod-internet" state={loc}>
                     <img src={internet} alt="close button"/>
                     <div className="internet-text">
                         <p>Login with internet banking</p>

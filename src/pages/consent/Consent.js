@@ -13,14 +13,13 @@ import protectedImg from '../../assets/protected.svg';
 import GeneralLayout from '../../components/layout/GeneralLayout';
 import CondueetLogo from '../../components/condueet-logo/CondueetLogo';
 
-export default function Consent({func}) {
+export default function Consent() {
   const navigate = useNavigate();
   const [checked, setChecked] = useState(false);
 
-  func(checked);
 
   const handleSubmit = () => {
-    navigate('/banks');
+    navigate('/banks', {state: checked});
   }
   return (
     <GeneralLayout>
