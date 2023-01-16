@@ -1,8 +1,0 @@
-.general-layout{
-    display: flex;
-    min-height: 100vh;
-    align-items: center;
-    background-size: cover;
-    justify-content: center;
-    background-image: url(../../assets/background-1.png);
-}
